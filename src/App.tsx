@@ -1,9 +1,19 @@
+import { useRoutes } from "react-router-dom";
 import Header from './components/Header'
-import './App.css'
+import Characters from "./pages/Characters.tsx";
+
 
 function App() {
+  const routes = useRoutes([
+    { path: '/', element: <Characters />, index: true },
+    { path: '/characters', element: <Characters /> },
+  ]);
+
   return (
-   <Header />
+    <>
+      <Header />
+      <main>{routes}</main>
+    </>
   )
 }
 
