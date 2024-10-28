@@ -1,5 +1,6 @@
 import { useRoutes } from "react-router-dom";
-import Header from './components/Header'
+import Header from './components/Header.tsx'
+import Footer from './components/Footer.tsx'
 import Characters from "./pages/Characters.tsx";
 
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <Header />
       <main>{routes}</main>
+      <Footer />
     </>
   )
 }

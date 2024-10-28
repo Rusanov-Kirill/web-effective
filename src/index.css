@@ -7,3 +7,12 @@ body {
     margin: 0;
     font-family: "Verdana", sans-serif;
 }
+
+main {
+    padding-top: 7vh;
+    padding-bottom: 13vh;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

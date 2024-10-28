@@ -1,6 +1,6 @@
-import styles from './Header.module.css'
+import styles from './modules/Header.module.css'
 import Logo  from '../assets/marvel_logo.svg'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 function Header() {
     return (
