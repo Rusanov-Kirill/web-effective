@@ -5,6 +5,7 @@
     flex-direction: column;
     border: 1px solid #ccc;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 .image {
@@ -18,6 +19,8 @@
     color: #c9170e;
     padding: 0 15px;
     margin-bottom: 5px;
+    -webkit-line-clamp: 1; 
+    line-clamp: 1;
 }
 
 .description {
@@ -25,10 +28,14 @@
     color: #4a4848;
     padding: 0 15px;
     font-size: 14px;
-    text-align: justify;
-    display: -webkit-box;        
+    text-align: justify;       
+    -webkit-line-clamp: 4;   
+    line-clamp: 4;   
+}
+
+.name, .description {
+    display: -webkit-box;  
+    overflow: hidden;
     -webkit-box-orient: vertical; 
-    -webkit-line-clamp: 4;      
-    overflow: hidden;   
     text-overflow: ellipsis;
 }

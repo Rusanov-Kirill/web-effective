@@ -21,7 +21,7 @@ header {
 nav {
     display: flex;
     margin-right: 1vw;
-    gap: 20px;
+    gap: 10px;
 
     a {
         color: yellow;

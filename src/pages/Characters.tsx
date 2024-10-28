@@ -1,6 +1,6 @@
-import styles from './Characters.module.css'
-import { characters } from '../mocks/characters'
-import Card from '../components/Card'
+import styles from './modules/CharactersAndComics.module.css'
+import { characters } from '../mocks/characters.ts'
+import Card from '../components/Card.tsx'
 
 function Characters() {
     const justifyContent = characters.length % 6 === 0 ? 'space-between' : 'flex-start';
