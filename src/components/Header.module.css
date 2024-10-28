@@ -17,6 +17,7 @@ header {
 nav {
     display: flex;
     margin-right: 1vw;
+    gap: 20px;
 
     a {
         color: yellow;
@@ -27,7 +28,7 @@ nav {
         font-family: "Verdana", sans-serif;
     }
 
-    a:active {
+    a.active {
         text-decoration: underline;
     }
 }
