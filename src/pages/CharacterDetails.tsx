@@ -1,4 +1,4 @@
-import styles from './modules/CharacterDetails.module.css'
+import styles from './modules/CharactersAndComicsDetails.module.css'
 import { characters } from '../mocks/characters'
 import { useParams } from 'react-router-dom'
 import { comics } from '../mocks/comics'
@@ -15,13 +15,13 @@ function CharacterDetails() {
 
     return (
         <div>
-            <img src={character.image} alt={character.name} className={styles['character-image']} />
+            <img src={character.image} alt={character.name} className={styles['entity-image']} />
             <div className={styles['info-container']}>
                 <div className={styles['title-description']}>
                     <h3>{character.name}</h3>
                     <h6 className={styles.description}>{character.description}</h6>
                 </div>
-                <div className={styles['comics-container']}>
+                <div className={styles['entity-container']}>
                     <h3>Comics</h3>
                     <div>
                         <ul className={styles.ul}>

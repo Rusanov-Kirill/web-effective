@@ -1,4 +1,4 @@
-.character-image {
+.entity-image {
     height: 40vh;
     width: 100%;
     border: 1px solid #555;
@@ -24,7 +24,7 @@
     margin: 0;
 }
 
-.comics-container {
+.entity-container {
     width: 50%;
     margin-right: 3vw; 
     margin-left: 3vw;

@@ -4,6 +4,7 @@ import Footer from './components/Footer.tsx'
 import Characters from "./pages/Characters.tsx"
 import Comics from "./pages/Comics.tsx"
 import CharacterDetails from "./pages/CharacterDetails.tsx"
+import ComicDetails from "./pages/ComicDetails.tsx"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     { path: '/characters', element: <Characters />},
     { path: '/comics', element: <Comics /> },
     { path: '/characters/:id', element: <CharacterDetails />},
+    { path: '/comics/:id', element: <ComicDetails />}
   ]);
 
   return (
