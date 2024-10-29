@@ -21,6 +21,7 @@ function Characters() {
                         image={character.image}
                         name={character.name}
                         description={character.description}
+                        link={`/characters/${character.id}`}
                     />
                 ))}
             </div>

@@ -21,6 +21,7 @@ function Comics() {
                         image={comic.image}
                         name={comic.name}
                         description={comic.description}
+                        link={`/comics/${comic.id}`}
                     />
                 ))}
             </div>
