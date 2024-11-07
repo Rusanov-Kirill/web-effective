@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import styles from './modules/Card.module.css'
 
 interface CardProps {
-    id: string;
+    id: number;
     image: string;
     name: string;
     description: string;
     link: string;
-    participatingIn: string[];
+    participatingIn?: string[];
 }
 
 const Card: React.FC<CardProps> = ({ image, name, description, link }) => {

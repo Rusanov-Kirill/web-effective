@@ -1,17 +1,33 @@
-import styles from './modules/CharactersAndComicsDetails.module.css'
-import { characters } from '../mocks/characters'
-import { useParams } from 'react-router-dom'
-import { comics } from '../mocks/comics'
+import styles from './modules/CharactersAndComicsDetails.module.css';
+import Loading from '../components/Loading.tsx';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import comicStore from '../stores/CharacterAndComicsStore.ts';
+import { Link } from 'react-router-dom';
 
-function ComicDetails() {
-    const { id } = useParams();
-    const comic = comics.find(com => com.id === id);
+const ComicDetails: React.FC = observer(() => {
+    const { id } = useParams<{ id: string }>();
+
+    useEffect(() => {
+        if (id) {
+            comicStore.getComicInfo(parseInt(id));
+        } else {
+            console.error('No comic ID provided');
+        }
+    }, [id]);
+
+    const comic = comicStore.selectedComic;
+
+    if (comicStore.loading) {
+        return (
+            <Loading />
+        );
+    }
 
     if (!comic) {
         return <div>Comics not found</div>;
     }
-
-    const characterInComics = characters.filter(char => comic.participatingIn.includes(char.id));
 
     return (
         <div>
@@ -25,10 +41,10 @@ function ComicDetails() {
                     <h3>Characters</h3>
                     <div>
                         <ul className={styles.ul}>
-                            {characterInComics.length > 0 ? (
-                                characterInComics.map(char => (
-                                    <li className={styles.li} key={char.id}>
-                                        <a className={styles.a} href={`/characters/${char.id}`}>{char.name}</a>
+                            {comic.participatingIn && comic.participatingIn.length > 0 ? (
+                                comic.participatingIn.map((char, idx) => (
+                                    <li className={styles.li} key={char.id || idx}>
+                                        <Link className={styles.a} to={`/characters/${char.id}`}>{char.name}</Link>
                                     </li>
                                 ))
                             ) : (
@@ -40,6 +56,6 @@ function ComicDetails() {
             </div>
         </div>
     )
-}
+});
 
-export default ComicDetails
+export default ComicDetails;

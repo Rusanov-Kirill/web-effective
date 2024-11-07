@@ -1,9 +1,22 @@
-import styles from './modules/CharactersAndComics.module.css'
-import { comics } from '../mocks/comics.ts'
-import Card from '../components/Card.tsx'
+import styles from './modules/CharactersAndComics.module.css';
+import Card from '../components/Card.tsx';
+import { observer } from 'mobx-react-lite';
+import React, { useEffect } from 'react';
+import comicStore from '../stores/CharacterAndComicsStore.ts';
+import Loading from '../components/Loading.tsx';
 
-function Comics() {
-    const justifyContent = comics.length % 6 === 0 ? 'space-between' : 'flex-start';
+const Comics: React.FC = observer(() => {
+    const justifyContent = comicStore.comics.length % 6 === 0 ? 'space-between' : 'flex-start';
+
+    useEffect(() => {
+        comicStore.getComicsList();
+      }, []);
+
+      if (comicStore.loading) {
+        return (
+          <Loading />
+        );
+      }
 
     return (
         <div className={styles['page-container']}>
@@ -14,7 +27,7 @@ function Comics() {
             </div>
             <hr className={styles.hr} />
             <div className={styles.cards} style={{ justifyContent }}>
-                {comics.map(comic => (
+                {comicStore.comics.map(comic => (
                     <Card
                         key={comic.id}
                         id={comic.id}
@@ -22,11 +35,12 @@ function Comics() {
                         name={comic.name}
                         description={comic.description}
                         link={`/comics/${comic.id}`}
+                        participatingIn={comic.participatingIn?.map((character) => character.name)}
                     />
                 ))}
             </div>
         </div>
     )
-}
+});
 
 export default Comics

@@ -7,6 +7,6 @@ export interface Post {
 }
 
 interface Comic {
+    id: number;
     name: string;
-    url: string;
 }
