@@ -1,14 +1,15 @@
 import axios from './helpers/axios.ts';
 import { Post } from '../types/post.ts';
+import { md5 } from 'js-md5';
 import envs from '../config/environments.ts';
 
-const PostCharacter = {
-  async getPostsList(): Promise<Post[]> {
+export default {
+  async getCharactersList(): Promise<Post[]> {
     const response = await axios.get('/v1/public/characters', {
       params: {
-        ts: 1,
+        ts: Date.now(),
         apikey: envs.apiKey,
-        hash: envs.apiHash
+        hash: md5(`${Date.now()}${envs.apiPKey}${envs.apiKey}`)
       }
     });
     const charData = response.data;
@@ -27,5 +28,3 @@ const PostCharacter = {
     return fetchedData;
   }
 }
-
-export default PostCharacter;

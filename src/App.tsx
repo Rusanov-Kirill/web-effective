@@ -5,6 +5,7 @@ import Characters from "./pages/Characters.tsx"
 import Comics from "./pages/Comics.tsx"
 import CharacterDetails from "./pages/CharacterDetails.tsx"
 import ComicDetails from "./pages/ComicDetails.tsx"
+import api from "./api/posts.ts"
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
     { path: '/characters/:id', element: <CharacterDetails />},
     { path: '/comics/:id', element: <ComicDetails />}
   ]);
+
+  api.getCharactersList();
 
   return (
     <>
