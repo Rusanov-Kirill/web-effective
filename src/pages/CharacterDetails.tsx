@@ -2,7 +2,7 @@ import styles from './modules/CharactersAndComicsDetails.module.css';
 import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import characterStore from '../stores/CharacterAndComicsStore';
+import characterStore from '../stores/CharactersAndComicsStore';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ const CharacterDetails: React.FC = observer(() => {
                             {character.participatingIn && character.participatingIn.length > 0 ? (
                                 character.participatingIn.map((comic, idx) => (
                                     <li className={styles.li} key={comic.id || idx}>
-                                        <Link className={styles.a} to={`/comics/${comic.id}`}>{comic.name}</Link>
+                                        <Link className={styles.linkToRelated} to={`/comics/${comic.id}`}>{comic.name}</Link>
                                     </li>
                                 ))
                             ) : (

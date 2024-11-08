@@ -3,7 +3,7 @@ import Loading from '../components/Loading.tsx';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import comicStore from '../stores/CharacterAndComicsStore.ts';
+import comicStore from '../stores/CharactersAndComicsStore.ts';
 import { Link } from 'react-router-dom';
 
 const ComicDetails: React.FC = observer(() => {
@@ -44,7 +44,7 @@ const ComicDetails: React.FC = observer(() => {
                             {comic.participatingIn && comic.participatingIn.length > 0 ? (
                                 comic.participatingIn.map((char, idx) => (
                                     <li className={styles.li} key={char.id || idx}>
-                                        <Link className={styles.a} to={`/characters/${char.id}`}>{char.name}</Link>
+                                        <Link className={styles.linkToRelated} to={`/characters/${char.id}`}>{char.name}</Link>
                                     </li>
                                 ))
                             ) : (

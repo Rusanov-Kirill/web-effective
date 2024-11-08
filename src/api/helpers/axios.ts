@@ -11,6 +11,7 @@ instance.interceptors.request.use(config => {
   const hash = md5(`${ts}${envs.apiPKey}${envs.apiKey}`);
 
   config.params = {
+    ...config.params,
     ts,
     apikey: envs.apiKey,
     hash,
