@@ -4,13 +4,15 @@ import Comics from "../pages/Comics";
 import CharacterDetails from "../pages/CharacterDetails";
 import ComicDetails from "../pages/ComicDetails";
 import { RouteObject } from "react-router-dom";
+import Favorites from '../pages/Favorites';
 
 const routesConfig: RouteObject[] = [
   { path: '/', element: React.createElement(Characters), index: true },
   { path: '/characters', element: React.createElement(Characters) },
   { path: '/comics', element: React.createElement(Comics) },
   { path: '/characters/:id', element: React.createElement(CharacterDetails) },
-  { path: '/comics/:id', element: React.createElement(ComicDetails) }
+  { path: '/comics/:id', element: React.createElement(ComicDetails) },
+  { path: 'favorites', element: React.createElement(Favorites) }
 ];
 
 export default routesConfig;
