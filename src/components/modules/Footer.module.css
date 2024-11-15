@@ -1,26 +1,30 @@
+@import '../../styles/variables/colors.css';
+@import '../../styles/variables/fonts.css';
+@import'../../styles/variables/spacing.css';
+
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     display: flex;
-    background-color: #555555;
+    background-color: var(--bright-grey-color);
     flex-direction: column;
     height: 13vh;
     align-items: flex-start;
-    padding-left: 1vw;
+    padding-left: var(--unit-vw);
     z-index: 1000;
 }
 
 .marvel-logo {
-    margin-top: 1vh;
+    margin-top: var(--unit-vh);
     height: 5vh;
-    margin-bottom: 1vh;
+    margin-bottom: var(--unit-vh);
 }
 
 p {
-    color: white;
-    font-size: 14px;
+    color: var(--white-text-color);
+    font-size: var(--common-text-font-size);
     margin: 0;
-    margin-bottom: 1vh;
+    margin-bottom: var(--unit-vh);
 }

@@ -1,3 +1,6 @@
+@import '../../styles/variables/colors.css';
+@import '../../styles/variables/spacing.css';
+
 .link {
     outline: none;
     text-decoration: none;
@@ -8,7 +11,7 @@
     width: 280px;
     height: 350px;
     flex-direction: column;
-    border: 1px solid #ccc;
+    border: 1px solid var(--card-border-color);
     margin-top: 30px;
     cursor: pointer;
 }
@@ -21,18 +24,18 @@
 }
 
 .name {
-    color: #c9170e;
-    padding: 0 15px;
+    color: var(--card-title-color);
+    padding: var(--card-paddings);
     margin-bottom: 5px;
     -webkit-line-clamp: 1; 
     line-clamp: 1; 
 }
 
 .description {
-    font-weight: 600;
-    color: #4a4848;
-    padding: 0 15px;
-    font-size: 14px;
+    font-weight: var(--bold-font-weight);
+    color: var(--card-description-color);
+    padding: var(--card-paddings);
+    font-size: var(--common-text-font-size);
     text-align: justify;       
     -webkit-line-clamp: 4;   
     line-clamp: 4;   
