@@ -48,8 +48,8 @@
     cd web-effective
 
 3. Установить зависимости с нодой:
-        ```bash
-        npm install
+    ```bash
+    npm install
 
 ## Запуск
 
