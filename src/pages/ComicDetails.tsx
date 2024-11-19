@@ -31,7 +31,9 @@ const ComicDetails: React.FC = observer(() => {
 
     return (
         <div>
-            <img src={comic.image} alt={comic.name} className={styles['entity-image']} />
+            <div>
+                <img src={comic.image} alt={comic.name} className={styles['entity-image']} />
+            </div>
             <div className={styles['info-container']}>
                 <div className={styles['title-description']}>
                     <h3>{comic.name}</h3>

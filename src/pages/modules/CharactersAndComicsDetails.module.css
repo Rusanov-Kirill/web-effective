@@ -3,11 +3,12 @@
 @import '../../styles/variables/spacing.css';
 
 .entity-image {
-    height: 40vh;
+    height: 50vh;
     width: 100%;
     border: 1px solid var(--bright-grey-color);
+    object-fit: cover;
+    object-position: 0 30%;
 }
-
 
 .info-container {
     display: flex;

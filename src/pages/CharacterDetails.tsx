@@ -31,7 +31,9 @@ const CharacterDetails: React.FC = observer(() => {
 
     return (
         <div>
-            <img src={character.image} alt={character.name} className={styles['entity-image']} />
+            <div>
+                <img src={character.image} alt={character.name} className={styles['entity-image']} />
+            </div>
             <div className={styles['info-container']}>
                 <div className={styles['title-description']}>
                     <h3>{character.name}</h3>
