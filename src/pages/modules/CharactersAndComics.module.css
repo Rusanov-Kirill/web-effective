@@ -51,10 +51,11 @@ hr, .hr-bottom {
 }
 
 .cards {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: calc(var(--common-gap) * 3);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hr-bottom {

@@ -38,20 +38,35 @@ class CharactersAndComicsStore {
     @action
     async getCharactersList(page: number = this.currentCharacterPage, nameStartsWith?: string) {
         this.loading = true;
-        this.currentCharacterPage = page;
         const offset = (page - 1) * this.characterLimit;
-
-        const remainingItems = REQUEST_LIMIT - offset;
-        const limit = remainingItems > 0 ? Math.min(this.characterLimit, remainingItems) : 0;
-
+        const remainingItems = REQUEST_LIMIT - this.characters.length;
+        const limit = Math.min(this.characterLimit, remainingItems);
+    
+        if (remainingItems <= 0) {
+            this.loading = false;
+            return;
+        }
+    
         try {
             const response = await api.getCharactersList(offset, limit, nameStartsWith);
-            this.characters = response;
+    
+            const uniqueCharacters = response.filter(
+                (newChar) => !this.characters.some((existingChar) => existingChar.id === newChar.id)
+            );
+    
+            this.characters = [...this.characters, ...uniqueCharacters];
+            this.currentCharacterPage = page;
         } catch (error) {
             console.error('Error fetching characters list:', error);
         } finally {
             this.loading = false;
         }
+    }
+
+    @action
+    resetCharacters() {
+        this.characters = [];
+        this.currentCharacterPage = 1;
     }
 
 
@@ -115,13 +130,13 @@ class CharactersAndComicsStore {
     @action
     resetCharacterPage() {
         this.currentCharacterPage = 1;
-        this.getCharactersList(1); 
+        this.getCharactersList(1);
     }
 
     @action
     resetComicPage() {
         this.currentComicPage = 1;
-        this.getComicsList(1); 
+        this.getComicsList(1);
     }
 }
 
