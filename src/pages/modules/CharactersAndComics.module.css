@@ -1,0 +1,55 @@
+.page-container {
+    margin: 1vw 3vh;
+}
+
+.title {
+    color: #373737;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.search-field-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-search-field::placeholder {
+    color: #D3D3D3;
+}
+
+.input-search-field {
+    font-family: "Verdana", sans-serif;
+    font-weight: 600;
+    width: 70vw;
+    outline: none;
+    border: 2px solid #D3D3D3;
+    height: 4vh;
+    padding-left: 1vw;
+    color: #373737;
+}
+
+.search-button {
+    font-weight: 600;
+    width: 20vw;
+    line-height: 10px;
+    outline: none;
+    border: none;
+    background-color: #efad4d;
+    color: white;
+    cursor: pointer;
+    font-family: "Verdana", sans-serif;
+}
+
+hr {
+    margin-top: 4vh;
+    border: 1px solid #D3D3D3;
+    opacity: 0.3;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+

@@ -1,0 +1,26 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: #555555;
+    flex-direction: column;
+    height: 13vh;
+    align-items: flex-start;
+    padding-left: 1vw;
+    z-index: 1000;
+}
+
+.marvel-logo {
+    margin-top: 1vh;
+    height: 5vh;
+    margin-bottom: 1vh;
+}
+
+p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 1vh;
+}

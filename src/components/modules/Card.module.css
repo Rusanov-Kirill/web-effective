@@ -1,0 +1,46 @@
+.link {
+    outline: none;
+    text-decoration: none;
+}
+
+.card {
+    display: flex;
+    width: 280px;
+    height: 350px;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.image {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.name {
+    color: #c9170e;
+    padding: 0 15px;
+    margin-bottom: 5px;
+    -webkit-line-clamp: 1; 
+    line-clamp: 1; 
+}
+
+.description {
+    font-weight: 600;
+    color: #4a4848;
+    padding: 0 15px;
+    font-size: 14px;
+    text-align: justify;       
+    -webkit-line-clamp: 4;   
+    line-clamp: 4;   
+}
+
+.name, .description {
+    display: -webkit-box;  
+    overflow: hidden;
+    -webkit-box-orient: vertical; 
+    text-overflow: ellipsis;
+}

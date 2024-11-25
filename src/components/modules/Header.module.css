@@ -1,0 +1,38 @@
+header {
+    background-color: red;
+    max-width: 100vw;
+    user-select: none;
+    display: flex;
+    height: 7vh;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.marvel-logo {
+    display: flex;
+    height: 5vh;
+    margin-left: 1vw;
+}
+
+nav {
+    display: flex;
+    margin-right: 1vw;
+    gap: 10px;
+
+    a {
+        color: yellow;
+        font-size: 16px;
+        text-decoration: none;
+        padding-left: 10px;
+        cursor: pointer;
+        font-family: "Verdana", sans-serif;
+    }
+
+    a.active {
+        text-decoration: underline;
+    }
+}
