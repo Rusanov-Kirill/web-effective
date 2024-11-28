@@ -1,0 +1,9 @@
+:root {
+    --web-site-font-family: 'Verdana', sans-serif;
+    --nav-button-font-size: 16px;
+    --links-font-size: 18px;
+    --loading-font-size: 48px;
+    --details-title-font-size: 24px;
+    --common-text-font-size: 14px;
+    --bold-font-weight: 600;
+}

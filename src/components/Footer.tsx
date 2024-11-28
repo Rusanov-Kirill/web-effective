@@ -1,5 +1,5 @@
 import styles from './modules/Footer.module.css'
-import Logo  from '../assets/marvel_logo.svg'
+import Logo  from '../assets/header_footer_logo.svg'
 
 function Footer() {
     const CURRENT_YEAR = new Date().getFullYear();

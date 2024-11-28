@@ -1,0 +1,14 @@
+@import '../../styles/variables/fonts.css';
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.loading-text {
+    font-family: var(--web-site-font-family);
+    font-size: var(--loading-font-size);
+    font-weight: var(--bold-font-weight);
+}
