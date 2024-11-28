@@ -41,19 +41,19 @@ class CharactersAndComicsStore {
         const offset = (page - 1) * this.characterLimit;
         const remainingItems = REQUEST_LIMIT - this.characters.length;
         const limit = Math.min(this.characterLimit, remainingItems);
-    
+
         if (remainingItems <= 0) {
             this.loading = false;
             return;
         }
-    
+
         try {
             const response = await api.getCharactersList(offset, limit, nameStartsWith);
-    
+
             const uniqueCharacters = response.filter(
                 (newChar) => !this.characters.some((existingChar) => existingChar.id === newChar.id)
             );
-    
+
             this.characters = [...this.characters, ...uniqueCharacters];
             this.currentCharacterPage = page;
         } catch (error) {
@@ -86,21 +86,37 @@ class CharactersAndComicsStore {
     @action
     async getComicsList(page: number = this.currentComicPage, titleStartsWith?: string) {
         this.loading = true;
-        this.currentComicPage = page;
         const offset = (page - 1) * this.comicLimit;
+        const remainingItems = REQUEST_LIMIT - this.comics.length;
+        const limit = Math.min(this.comicLimit, remainingItems);
 
-        const remainingItems = REQUEST_LIMIT - offset;
-        const limit = remainingItems > 0 ? Math.min(this.comicLimit, remainingItems) : 0;
+        if (remainingItems <= 0) {
+            this.loading = false;
+            return;
+        }
 
         try {
             const response = await api.getComicsList(offset, limit, titleStartsWith);
-            this.comics = response;
+
+            const uniqueComics = response.filter(
+                (newComic) => !this.comics.some((existingComic) => existingComic.id === newComic.id)
+            );
+
+            this.comics = [...this.comics, ...uniqueComics];
+            this.currentComicPage = page;
         } catch (error) {
             console.error('Error fetching comics list:', error);
         } finally {
             this.loading = false;
         }
     }
+
+    @action
+    resetComics() {
+        this.comics = [];
+        this.currentComicPage = 1;
+    }
+
 
     @action
     async getComicInfo(comicId: number) {
@@ -113,30 +129,6 @@ class CharactersAndComicsStore {
         } finally {
             this.loading = false;
         }
-    }
-
-    @action
-    setCharacterPage(page: number) {
-        this.currentCharacterPage = page;
-        this.getCharactersList(page);
-    }
-
-    @action
-    setComicPage(page: number) {
-        this.currentComicPage = page;
-        this.getComicsList(page);
-    }
-
-    @action
-    resetCharacterPage() {
-        this.currentCharacterPage = 1;
-        this.getCharactersList(1);
-    }
-
-    @action
-    resetComicPage() {
-        this.currentComicPage = 1;
-        this.getComicsList(1);
     }
 }
 
