@@ -1,0 +1,1 @@
+export const REQUEST_LIMIT = 20;

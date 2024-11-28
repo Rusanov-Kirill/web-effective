@@ -43,6 +43,11 @@ li {
     font-size: 18px;
 }
 
-a {
+.linkToRelated {
+    text-decoration: none;
+}
+
+.linkToRelated:visited {
+    color: #0000EE;
     text-decoration: none;
 }
