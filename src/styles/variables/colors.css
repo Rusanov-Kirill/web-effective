@@ -1,0 +1,13 @@
+:root {
+    --header-background-color: #ff0000;
+    --header-button-text-color: #ffff00;
+    --bright-grey-color: #555555;
+    --card-border-color: #ccc;
+    --card-description-color: #4a4848;
+    --card-title-color: #c9170e;
+    --pages-buttons-color: #efad4d;
+    --white-text-color: #ffffff;
+    --dim-grey-color: #D3D3D3;
+    --titles-and-search-color: #373737;
+    --default-link-color: #0000EE;
+}

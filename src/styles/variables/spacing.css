@@ -1,0 +1,6 @@
+:root {
+    --common-gap: 10px;
+    --card-paddings: 0 15px;
+    --unit-vh: 1vh;
+    --unit-vw: 1vw;
+}

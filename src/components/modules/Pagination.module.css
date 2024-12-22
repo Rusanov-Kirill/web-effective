@@ -1,0 +1,26 @@
+@import '../../styles/variables/colors.css';
+@import '../../styles/variables/fonts.css';
+@import '../../styles/variables/spacing.css';
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--common-gap);
+    margin-top: 20px;
+}
+
+.pageButton {
+    font-weight: var(--bold-font-weight);
+    width: 50px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: var(--pages-buttons-color);
+    color: var(--white-text-color);
+    cursor: pointer;
+    font-family: var(--web-site-font-family);
+}
+
+.pageButton:disabled {
+    background-color: var(--dim-grey-color);
+}
